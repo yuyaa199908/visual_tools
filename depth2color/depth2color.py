@@ -17,10 +17,10 @@ class Depth2Color(Node):
         super().__init__('depth2color')
         self.sub_image = self.create_subscription(
                             Image(), 
-                            '/camera/depth/image_rect_raw', 
+                            '/input_image', 
                             self.CB_masking,
                             10)
-        self.pub_image =  self.create_publisher(Image, '/depth_with_color', 10)
+        self.pub_image =  self.create_publisher(Image(), '/output_image', 10)
 
     def CB_masking(self, msg):
         img_np = CvBridge().imgmsg_to_cv2(msg)

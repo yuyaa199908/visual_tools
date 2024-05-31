@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 import os
 from glob import glob
 
-package_name = 'visual_tools'
+package_name = 'visual_tool'
 
 setup(
     name=package_name,

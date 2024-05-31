@@ -9,9 +9,10 @@ from launch_ros.actions import Node
 def generate_launch_description():
     return LaunchDescription([
         Node(
-            package='sam_test',
+            package='visual_tool',
             namespace='depth2color',
             executable='depth2color',
-            # remappings=[('/input_image', '/camera/depth/image_rect_raw')],
+            remappings=[('/input_image', '/camera/depth/image_rect_raw'),
+                        ('/output_image', '/depth_with_color')],
         ),
     ])
